@@ -1,0 +1,46 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chroniclehq.com/authentication
+docs: https://docs.chroniclehq.com/authentication
+summary:
+  types: [apiKey, oauth2]
+  api_key_in: [header]
+  api_key_headers: [Authorization, x-api-key]
+  oauth2_flows: [authorizationCode, deviceCode, refreshToken]
+schemes:
+- name: apiKeyAuthorization
+  type: apiKey
+  in: header
+  parameter: Authorization
+  format: 'Bearer <API_KEY>'
+  scope: workspace
+  key_prefix: chr_
+  notes: >-
+    Workspace-scoped API key for the REST API at /api/v1. Created in Chronicle web app
+    Settings -> API by a workspace admin; shown once. Keys are revoked (not hard-deleted)
+    to preserve audit visibility. Requests are rate limited per key.
+- name: apiKeyHeader
+  type: apiKey
+  in: header
+  parameter: x-api-key
+  format: '<API_KEY>'
+  scope: workspace
+  notes: Alternative header form of the same workspace-scoped API key. Use one method consistently.
+- name: mcpOAuth
+  type: oauth2
+  applies_to: MCP server (https://mcp.chroniclehq.com)
+  authorization_server: https://login.chroniclehq.com
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://login.chroniclehq.com/oauth2/authorize
+    tokenUrl: https://login.chroniclehq.com/oauth2/token
+    pkce: [S256]
+  - flow: deviceCode
+    deviceAuthorizationUrl: https://login.chroniclehq.com/oauth2/device_authorization
+  grant_types_supported: [authorization_code, client_credentials, refresh_token, 'urn:ietf:params:oauth:grant-type:device_code']
+  token_type: JWT
+  notes: >-
+    The MCP path uses OAuth 2.0 against login.chroniclehq.com and carries a JWT bearer
+    token. JWT-auth errors surface as JWT_INVALID / JWT_EXPIRED / JWT_WRONG_AUDIENCE /
+    JWT_SIGNATURE_INVALID. MCP requests require workspace_id in body or query
+    (else WORKSPACE_ID_REQUIRED).
