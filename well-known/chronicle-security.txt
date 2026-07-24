@@ -1,0 +1,3 @@
+# Our security address is security@chroniclehq.com
+Contact: mailto:security@chroniclehq.com
+Expires: 2030-12-31T18:30:00.000Z

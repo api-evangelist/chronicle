@@ -1,27 +1,152 @@
 aid: chronicle
 name: Chronicle
-description: 'Chronicle is a company surfaced as a portfolio company of accel and added to the API Evangelist
-  network as a stub for enrichment. Sector: cloud-saas. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Chronicle is an AI presentation platform (chroniclehq.com) that turns documents, notes,
+  data, and business context into beautiful, fully editable, on-brand presentations, using
+  templates from designers at Apple, McKinsey, BCG, and IDEO. Beyond the web app, Chronicle
+  ships a developer surface: a workspace-scoped REST API at api.chroniclehq.com/api/v1 for
+  listing templates, creating and generating presentations, uploading reference files, and
+  polling asynchronous generation jobs; and a hosted, OAuth-secured MCP server at
+  mcp.chroniclehq.com that lets AI agents (Claude, ChatGPT, Gemini) create presentations
+  directly. Chronicle is used by teams including OpenAI, Ramp, Vercel, Notion, Figma, and
+  Meta, and is backed by Accel.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://cms.chroniclehq.com/wp-content/uploads/2026/02/og.jpg
 url: https://raw.githubusercontent.com/api-evangelist/chronicle/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - accel
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: developer-surface-found
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Cloud Saas
-apis: []
+- Presentations
+- Artificial Intelligence
+- Productivity
+- Content Generation
+- Agents
+- MCP
+- Developer API
+apis:
+- name: Chronicle API
+  description: >-
+    Workspace-scoped REST API to list templates, create presentations from templates,
+    generate presentations from a prompt (asynchronous, poll-to-complete), upload reference
+    files to ground generation, fetch presentations, and update presentation metadata.
+    API-key authenticated (Authorization Bearer or x-api-key). Available on Pro/Plus/Max plans.
+  humanURL: https://docs.chroniclehq.com/overview
+  baseURL: https://api.chroniclehq.com/api/v1
+  tags:
+  - Presentations
+  - Artificial Intelligence
+  - Content Generation
+  properties:
+  - type: Documentation
+    url: https://docs.chroniclehq.com/overview
+  - type: APIReference
+    url: https://docs.chroniclehq.com/api-reference
+  - type: Quickstart
+    url: https://docs.chroniclehq.com/quickstart
+  - type: Authentication
+    url: authentication/chronicle-authentication.yml
+  - type: ErrorCatalog
+    url: errors/chronicle-error-codes.yml
+  - type: RateLimits
+    url: rate-limits/chronicle-rate-limits.yml
+  - type: Conventions
+    url: conventions/chronicle-conventions.yml
+  - type: DataModel
+    url: data-model/chronicle-data-model.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: TrustCenter
+  url: security/chronicle-trust-center.yml
+- type: DomainSecurity
+  url: security/chronicle-domain-security.yml
 - type: Website
   url: https://chroniclehq.com/
+- type: DeveloperPortal
+  url: https://docs.chroniclehq.com/
+- type: Documentation
+  url: https://docs.chroniclehq.com/overview
+- type: APIReference
+  url: https://docs.chroniclehq.com/api-reference
+- type: GettingStarted
+  url: https://docs.chroniclehq.com/quickstart
+- type: Pricing
+  url: https://chroniclehq.com/pricing
+- type: SignUp
+  url: https://app.chroniclehq.com/start
+- type: Login
+  url: https://app.chroniclehq.com
+- type: Support
+  url: https://intercom.help/chroniclehqfaq/en/
+- type: HelpCenter
+  url: https://docs.chroniclehq.com/get-help
+- type: Blog
+  url: https://chroniclehq.com/blog
+- type: TermsOfService
+  url: https://chroniclehq.com/terms-of-use
+- type: PrivacyPolicy
+  url: https://chroniclehq.com/privacy-policy-2
+- type: GitHubOrganization
+  url: https://github.com/chroniclehq
+- type: Compliance
+  url: https://security.chroniclehq.com/
+- type: Integrations
+  url: https://chroniclehq.com/integrations
+- type: MCPServer
+  url: mcp/chronicle-mcp.yml
+- type: LLMsTxt
+  url: llms/chronicle-llms.txt
+- type: WellKnown
+  url: well-known/chronicle-well-known.yml
+- type: SecurityTxt
+  url: well-known/chronicle-security.txt
+- type: Authentication
+  url: authentication/chronicle-authentication.yml
+- type: ErrorCatalog
+  url: errors/chronicle-error-codes.yml
+- type: RateLimits
+  url: rate-limits/chronicle-rate-limits.yml
+- type: Conventions
+  url: conventions/chronicle-conventions.yml
+- type: Lifecycle
+  url: lifecycle/chronicle-lifecycle.yml
+- type: ChangeLog
+  url: changelog/chronicle-changelog.yml
+- type: Conformance
+  url: conformance/chronicle-conformance.yml
+- type: DataModel
+  url: data-model/chronicle-data-model.yml
+- type: VulnerabilityDisclosure
+  url: security/chronicle-vulnerability-disclosure.yml
+- type: Security
+  url: well-known/chronicle-security.txt
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

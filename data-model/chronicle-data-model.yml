@@ -1,0 +1,50 @@
+generated: '2026-07-18'
+method: derived
+source: https://docs.chroniclehq.com/overview
+note: >-
+  Derived from the documented API surface and MCP tool inputs (Chronicle publishes no
+  machine-readable schema; the /api-reference/openapi.json served by the docs host is a
+  Mintlify "Plant Store" sample placeholder, not Chronicle's real spec).
+entities:
+- name: Workspace
+  id_field: workspace_id
+  description: Top-level tenant. API keys and all resources are workspace-scoped.
+  attributes: [workspace_id, mcp_enabled]
+- name: Template
+  id_field: template_id
+  description: Starting structure and design for a presentation; published public templates plus workspace templates.
+- name: Presentation
+  id_field: presentation_id
+  aliases: [id, document]
+  description: The final Chronicle output. Responses include an id and a shareable url.
+  attributes: [id, url, title]
+- name: GenerationJob
+  id_field: generation_id
+  description: Asynchronous AI generation job. States generating / awaiting_input / completed / failed; phase storyline | slides for Standalone.
+- name: Attachment
+  id_field: id
+  description: File uploaded via a presigned S3 target, referenced in attachments[] to ground a generation.
+  attributes: [id, url, file_name, content_type, type, declared_file_size]
+relationships:
+- from: Workspace
+  to: Template
+  type: has_many
+- from: Workspace
+  to: Presentation
+  type: has_many
+- from: Presentation
+  to: Template
+  type: belongs_to
+  via: template_id
+- from: GenerationJob
+  to: Workspace
+  type: belongs_to
+  via: workspace_id
+- from: GenerationJob
+  to: Presentation
+  type: has_one
+  via: presentation_id
+- from: GenerationJob
+  to: Attachment
+  type: has_many
+  via: attachments

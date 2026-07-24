@@ -1,0 +1,13 @@
+generated: '2026-07-18'
+method: generated
+source: https://docs.chroniclehq.com/mcp-guide
+note: Skills grounded in the real published Chronicle MCP tool names and REST endpoints.
+skills:
+- file: chronicle-generate-presentation.md
+  name: Generate a Chronicle presentation from a prompt
+  api: mcp/chronicle-mcp.yml
+  operations: [list_workspaces, get_templates, create_upload_target, generate_presentation, get_generation_status, send_followup_message, get_presentation]
+- file: chronicle-create-from-template.md
+  name: Create a Chronicle presentation from a template
+  api: mcp/chronicle-mcp.yml
+  operations: [list_workspaces, get_templates, create_presentation, get_presentation]

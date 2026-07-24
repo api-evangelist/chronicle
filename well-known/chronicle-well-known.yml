@@ -1,0 +1,49 @@
+generated: '2026-07-18'
+method: searched
+source: probed /.well-known/ across chronicle hosts
+hosts:
+- host: https://app.chroniclehq.com
+  documents:
+  - path: /.well-known/security.txt          # RFC 9116
+    status: 200
+    file: chronicle-security.txt
+  - path: /.well-known/openid-configuration
+    status: 200
+    real: false
+    note: SPA catch-all returns index.html (text/html), not an OIDC document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    real: false
+    note: SPA catch-all returns index.html, not RFC 8414 metadata
+  - path: /.well-known/api-catalog
+    status: 200
+    real: false
+    note: SPA catch-all returns index.html, not an api-catalog
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    real: false
+    note: SPA catch-all returns index.html, not an ai-plugin manifest
+- host: https://mcp.chroniclehq.com
+  documents:
+  - path: /.well-known/oauth-protected-resource   # RFC 9728
+    status: 200
+    file: chronicle-mcp-oauth-protected-resource.json
+    note: MCP protected-resource metadata; points auth to https://login.chroniclehq.com
+- host: https://login.chroniclehq.com
+  documents:
+  - path: /.well-known/openid-configuration        # OIDC discovery
+    status: 200
+    file: chronicle-login-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server  # RFC 8414
+    status: 200
+    file: chronicle-login-oauth-authorization-server.json
+- host: https://chroniclehq.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://api.chroniclehq.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404

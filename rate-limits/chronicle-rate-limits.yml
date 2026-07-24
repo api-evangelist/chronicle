@@ -1,0 +1,17 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chroniclehq.com/api-scope-rate-limits
+scope: per-api-key
+signal:
+  status: 429
+  error_code: API_KEY_RATE_LIMITED
+  header: null
+rate_limits:
+- name: default
+  scope: api-key
+  limit_count: 20
+  interval: minute
+  note: Documented example policy — "20 requests per minute per key". Exact production limits may vary.
+guidance: >-
+  On 429, reduce request frequency and retry with exponential backoff and jitter
+  (1s, 2s, 4s, 8s). Avoid aggressive polling loops on generation status.

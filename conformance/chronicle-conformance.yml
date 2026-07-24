@@ -1,0 +1,31 @@
+generated: '2026-07-18'
+method: searched
+source:
+- https://docs.chroniclehq.com/authentication
+- https://login.chroniclehq.com/.well-known/openid-configuration
+- https://mcp.chroniclehq.com/.well-known/oauth-protected-resource
+standards:
+- id: oauth2
+  conforms: true
+  evidence: MCP auth via login.chroniclehq.com OAuth 2.0 authorization server (authorization_code, device_code, refresh_token; PKCE S256).
+- id: oidc
+  conforms: true
+  evidence: login.chroniclehq.com publishes /.well-known/openid-configuration (issuer, id_token RS256, jwks_uri).
+- id: rfc9728-oauth-protected-resource
+  conforms: true
+  evidence: mcp.chroniclehq.com publishes /.well-known/oauth-protected-resource.
+- id: rfc8414-authorization-server-metadata
+  conforms: true
+  evidence: login.chroniclehq.com publishes /.well-known/oauth-authorization-server.
+- id: rfc9116-security-txt
+  conforms: true
+  evidence: app.chroniclehq.com/.well-known/security.txt present with Contact + Expires.
+- id: mcp
+  conforms: true
+  evidence: Hosted remote Model Context Protocol server at mcp.chroniclehq.com (HTTP transport).
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: 'Error envelope is a custom error object with code/message/status fields, not application/problem+json.'
+- id: apikey-auth
+  conforms: true
+  evidence: Workspace-scoped API keys via Authorization Bearer or x-api-key header.

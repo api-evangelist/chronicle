@@ -1,0 +1,82 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chroniclehq.com/error-codes
+format: custom-json
+envelope:
+  shape: '{ "error": { "code": string, "message": string, "status": number } }'
+  fields:
+    error: Error payload object.
+    error.code: Machine-readable error code.
+    error.message: Human-readable error message.
+    error.status: HTTP status, mirrored in the body for convenience.
+retry:
+  retryable: [429, 500, 502, 503, 504]
+  non_retryable: [400, 401, 402, 403, 404]
+  backoff: exponential with jitter (1s, 2s, 4s, 8s)
+error_codes:
+- code: BAD_REQUEST
+  status: 400
+  meaning: Request malformed or missing required fields.
+- code: WORKSPACE_ID_REQUIRED
+  status: 400
+  meaning: MCP/JWT request with no workspace_id in body or query.
+- code: UNAUTHORIZED
+  status: 401
+  meaning: Missing or malformed auth header.
+- code: API_KEY_INVALID
+  status: 401
+  meaning: API key is invalid.
+- code: API_KEY_EXPIRED
+  status: 401
+  meaning: API key is expired.
+- code: API_KEY_REVOKED
+  status: 401
+  meaning: API key is revoked.
+- code: JWT_INVALID
+  status: 401
+  meaning: MCP/JWT token invalid. Reconnect via the OAuth flow.
+- code: JWT_EXPIRED
+  status: 401
+  meaning: MCP/JWT token expired. Reconnect via the OAuth flow.
+- code: JWT_WRONG_AUDIENCE
+  status: 401
+  meaning: MCP/JWT token audience mismatch.
+- code: JWT_SIGNATURE_INVALID
+  status: 401
+  meaning: MCP/JWT token signature invalid.
+- code: PRICING_REMIX_OVER_LIMIT
+  status: 402
+  meaning: Workspace remix/usage limit reached; upgrade required.
+- code: PRICING_DOCUMENT_LIMIT_REACHED
+  status: 402
+  meaning: Workspace document limit reached; upgrade required.
+- code: INSUFFICIENT_PRIVILEGES
+  status: 403
+  meaning: chr_* key targeting a different workspace than it is bound to.
+- code: WORKSPACE_ACCESS_DENIED
+  status: 403
+  meaning: JWT user lacks membership in the target workspace.
+- code: MCP_NOT_ENABLED
+  status: 403
+  meaning: User not in the MCP feature allowlist; only list_workspaces is usable.
+- code: DOCUMENT_NOT_FOUND
+  status: 404
+  meaning: Unknown presentation ID.
+- code: TEMPLATE_NOT_FOUND
+  status: 404
+  meaning: Unknown template ID.
+- code: WORKSPACE_NOT_FOUND
+  status: 404
+  meaning: Unknown workspace.
+- code: NOT_FOUND
+  status: 404
+  meaning: Unknown generation job or resource.
+- code: API_KEY_RATE_LIMITED
+  status: 429
+  meaning: Per-API-key rate limit exceeded. Back off and retry.
+- code: INTERNAL_ERROR
+  status: 500
+  meaning: Temporary server-side failure.
+- code: UNKNOWN_INTERNAL_ERROR
+  status: 500
+  meaning: Unclassified server-side or upstream failure (500/502/503/504).

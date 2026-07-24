@@ -1,0 +1,20 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chroniclehq.com/changelog
+versioning:
+  scheme: uri-path
+  current: v1
+  current_release: v1.3.0
+  base_url: https://api.chroniclehq.com/api/v1
+  docs: https://docs.chroniclehq.com/api-scope-rate-limits
+deprecation:
+  policy_url: null
+  sunset_header: null
+  note: No formal deprecation/Sunset (RFC 8594) policy is published. Changes are announced via the dated changelog.
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+status_page_note: status.chroniclehq.com did not resolve (no public status page found as of 2026-07-18).
+changelog: https://docs.chroniclehq.com/changelog
+deprecated_operations: []

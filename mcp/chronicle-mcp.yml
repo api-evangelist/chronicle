@@ -1,0 +1,49 @@
+generated: '2026-07-18'
+method: searched
+status: published
+source: https://docs.chroniclehq.com/mcp-guide
+server:
+  name: chronicle
+  transport: http
+  url: https://mcp.chroniclehq.com
+  auth:
+    type: oauth2
+    protected_resource: https://mcp.chroniclehq.com/.well-known/oauth-protected-resource
+    authorization_server: https://login.chroniclehq.com
+    bearer_methods_supported: [header]
+  plans: [Pro, Plus, Max]
+  clients_documented: [Claude.ai, Claude Code, ChatGPT, Gemini]
+notes: >-
+  Hosted remote MCP server. Every tool except list_workspaces takes workspace_id;
+  call list_workspaces first (its response includes mcp_enabled — if false, all other
+  tools reject with MCP_NOT_ENABLED). Generation is asynchronous: generate_presentation
+  and send_followup_message return status="generating" immediately; poll
+  get_generation_status (each call holds open ~50s) until a terminal state.
+tools:
+- name: list_workspaces
+  description: Returns workspaces the authenticated user can target; call first to obtain workspace_id. Response includes mcp_enabled.
+  inputs: []
+- name: get_templates
+  description: Returns templates available to the workspace.
+  inputs: [workspace_id]
+- name: get_presentation
+  description: Fetches an existing presentation.
+  inputs: [workspace_id, presentation_id]
+- name: create_presentation
+  description: Creates a presentation from a template (no AI involved).
+  inputs: [workspace_id, template_id, 'selected_section_ids (optional)']
+- name: create_upload_target
+  description: Issues a presigned S3 upload target for a file attachment.
+  inputs: [workspace_id, file_name, content_type, declared_file_size]
+- name: generate_presentation
+  description: Starts an AI generation; returns status generating with generation_id. Omit template_id for the Standalone storyline-first path.
+  inputs: [workspace_id, prompt, 'template_id (optional)', 'selected_section_ids (optional)', 'attachments (optional)']
+- name: send_followup_message
+  description: Replies to an in-flight generation that returned awaiting_input.
+  inputs: [workspace_id, generation_id, content, 'attachments (optional)']
+- name: get_generation_status
+  description: Polls a generation's current state (generating, awaiting_input, completed, failed). Holds open ~50s.
+  inputs: [workspace_id, generation_id]
+attachments:
+  supported_formats: [.txt, .md, .pdf, .pptx, .jpg, .jpeg, .png, .gif, .webp]
+  max_size_mb: 50

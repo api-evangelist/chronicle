@@ -1,0 +1,24 @@
+# Chronicle Developer Docs
+
+> Build with the Chronicle API and MCP
+
+## Docs
+
+- [API reference](https://docs.chroniclehq.com/api-reference.md): Reference for Chronicle API endpoints, request formats, and responses.
+- [API scope and rate limits](https://docs.chroniclehq.com/api-scope-rate-limits.md): What the Chronicle v1 API covers, rate limits and how to work within its current scope.
+- [Authentication](https://docs.chroniclehq.com/authentication.md): Authenticate to the Chronicle API with a workspace-scoped API key.
+- [Changelog](https://docs.chroniclehq.com/changelog.md)
+- [Error codes](https://docs.chroniclehq.com/error-codes.md): Chronicle API error response shape and common HTTP status codes.
+- [GET /presentations/generate/:generationId/status](https://docs.chroniclehq.com/get-generation-status.md): Returns the current state of a generation job.
+- [Get help](https://docs.chroniclehq.com/get-help.md): Support when you need it
+- [GET /presentations/:id](https://docs.chroniclehq.com/get-presentations-id.md): Fetches a presentation by ID.
+- [GET /templates](https://docs.chroniclehq.com/get-templates.md): Returns published public templates and templates available to the workspace tied to your API key.
+- [MCP setup](https://docs.chroniclehq.com/mcp-guide.md): Bring the power of Chronicle into your AI tools.
+- [Chronicle API](https://docs.chroniclehq.com/overview.md): Generate, fetch, and edit presentations from your own products, workflows, and AI agents.
+- [PATCH /presentations/:id](https://docs.chroniclehq.com/patch-presentations-id.md): Updates presentation metadata. In the current version, only title is supported.
+- [POST /presentations](https://docs.chroniclehq.com/post-presentations.md): Creates a new presentation from an existing template.
+- [POST /presentations/generate](https://docs.chroniclehq.com/post-presentations-generate.md): Starts an asynchronous AI presentation generation job.
+- [POST /presentations/generate/:generationId/message](https://docs.chroniclehq.com/post-send-followup-message.md): Sends a follow-up message within an active generation job.
+- [POST /uploads/create-target](https://docs.chroniclehq.com/post-uploads-create-target.md): Returns a presigned S3 POST so you can upload an attachment for use in a generation.
+- [Quickstart](https://docs.chroniclehq.com/quickstart.md): Get setup with Chronicle API fast
+- [Troubleshooting](https://docs.chroniclehq.com/troubleshooting.md)

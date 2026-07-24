@@ -1,0 +1,48 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chroniclehq.com/api-scope-rate-limits
+docs:
+- https://docs.chroniclehq.com/overview
+- https://docs.chroniclehq.com/authentication
+- https://docs.chroniclehq.com/error-codes
+base_url: https://api.chroniclehq.com/api/v1
+authentication:
+  style: api-key (header) for REST; OAuth2/JWT for MCP
+  headers: [Authorization Bearer, x-api-key]
+  scope: workspace
+  ref: authentication/chronicle-authentication.yml
+idempotency:
+  supported: false
+  note: No idempotency-key header or parameter is documented for the Chronicle v1 API.
+pagination:
+  supported: false
+  note: No pagination parameters or cursor/offset envelope are documented for v1 (list surfaces are small — templates, single presentations).
+async_model:
+  style: job-polling
+  pattern: >-
+    Write generations are asynchronous. POST /presentations/generate returns 202 with a
+    generation_id, status "generating", and a poll_url. Poll GET
+    /presentations/generate/:generationId/status until a terminal state (completed,
+    awaiting_input, failed). Over MCP each get_generation_status call holds open ~50s.
+  phases: [storyline, slides]   # Standalone generations report phase
+  states: [generating, awaiting_input, completed, failed]
+error_envelope:
+  shape: '{ "error": { "code": string, "message": string, "status": number } }'
+  ref: errors/chronicle-error-codes.yml
+rate_limiting:
+  scope: per-api-key
+  example_policy: 20 requests per minute per key
+  signal: HTTP 429 with error.code API_KEY_RATE_LIMITED
+  guidance: exponential backoff with jitter (1s/2s/4s/8s)
+  ref: rate-limits/chronicle-rate-limits.yml
+versioning:
+  scheme: uri-path
+  current_path: /api/v1
+  current_release: v1.3.0
+  ref: lifecycle/chronicle-lifecycle.yml
+request_tracing:
+  note: Docs recommend logging request IDs "if available"; no standardized request-id response header is documented.
+attachments:
+  flow: POST /uploads/create-target -> presigned S3 POST -> reference in attachments[] on generate
+  supported_formats: [.txt, .md, .pdf, .pptx, .jpg, .jpeg, .png, .gif, .webp]
+  max_size_mb: 50

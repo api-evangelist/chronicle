@@ -1,0 +1,34 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.chroniclehq.com/changelog
+scheme: semver
+current_version: v1.3.0
+entries:
+- version: v1.3.0
+  date: '2026-06'
+  breaking: false
+  highlights:
+  - MCP generate_presentation accepts an optional template_id (omit for Standalone storyline-first path).
+  - New MCP tool create_upload_target for presigned S3 upload targets (PDF, PPTX, images, text).
+  - attachments[] accepted on MCP generate_presentation and send_followup_message.
+- version: v1.2.0
+  date: '2026-05'
+  breaking: false
+  highlights:
+  - template_id now optional on POST /presentations/generate (Standalone flow — storyline outline then slides).
+  - non_interactive:true body flag for automation (n8n, Zapier, Make, MCP) — never pauses for clarifying questions.
+  - Structured storyline params for Standalone non-interactive path (narrative_type, rewrite_style, section_count, language).
+  - GET /presentations/generate/:generationId/status returns phase ('storyline' | 'slides') for Standalone generations.
+- version: v1.1.0
+  date: '2026-05'
+  breaking: false
+  highlights:
+  - POST /uploads/create-target for uploading reference files to ground generation.
+  - attachments[] accepted on POST /presentations/generate and .../message.
+- version: v1.0.0
+  date: '2026-04'
+  breaking: false
+  highlights:
+  - Initial public release of the Chronicle API with API-key authentication for workspace admins.
+  - GET /templates, GET /presentations/:id, POST /presentations, PATCH /presentations/:id.
+  - POST /presentations/generate + status polling + follow-up message endpoints.
