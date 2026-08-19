@@ -30,7 +30,7 @@ x-backed-by:
 - accel
 x-tier: enriched
 x-tier-reason: developer-surface-found
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-18'
 tags:
