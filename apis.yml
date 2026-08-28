@@ -10,6 +10,17 @@ description: >-
   mcp.chroniclehq.com that lets AI agents (Claude, ChatGPT, Gemini) create presentations
   directly. Chronicle is used by teams including OpenAI, Ramp, Vercel, Notion, Figma, and
   Meta, and is backed by Accel.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
