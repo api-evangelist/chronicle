@@ -1,0 +1,54 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://chroniclehq.com/pricing
+sources:
+- https://chroniclehq.com/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: per-seat
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: true
+note: Monthly list prices also shown ($15 Pro, $30 Plus, $59 Max); annual billing saves 20%. Token allowances
+  per seat; unused tokens expire monthly.
+plan_count: 5
+currency: USD
+plans:
+- name: Free
+  price_text: $0
+  price: 0
+  currency: USD
+  period: month
+  unit: user
+  included_quota: Up to 10 decks, basic preset themes, publish to web, export to PDF & socials, 3 guest
+    editors
+- name: Pro
+  price_text: $12
+  price: 12
+  currency: USD
+  period: month
+  unit: per user / month (annual)
+  included_quota: 500 tokens per seat / month, unlimited decks, custom themes, up to 10 guest editors
+- name: Plus
+  price_text: $25
+  price: 25
+  currency: USD
+  period: month
+  unit: per user / month (annual)
+  included_quota: 1000 tokens per seat / month, Muse agent, export to PowerPoint, unlimited guest editors
+- name: Max
+  price_text: $45
+  price: 45
+  currency: USD
+  period: month
+  unit: per user / month (annual)
+  included_quota: 2000 tokens per user / month, advanced custom branding, custom fonts, priority support
+- name: Enterprise
+  price_text: Contact Sales
+  period: none
