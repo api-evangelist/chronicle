@@ -93,6 +93,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Plans
+  url: plans/chronicle-plans-pricing.yml
 - type: TrustCenter
   url: security/chronicle-trust-center.yml
 - type: DomainSecurity
