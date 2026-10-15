@@ -1,0 +1,34 @@
+generated: '2026-10-15'
+edges:
+- partner_name: n8n
+  partner: n8n
+  partner_match: aggregator
+  type: marketplace
+  marketplace: n8n-community
+  channel: open-source-node
+  relationship: ipaas-bridge
+  direction: provider-built
+  evidence: https://www.npmjs.com/package/@chroniclehq/n8n-nodes-chronicle
+  category: null
+  contract_reference:
+    register: n8n community nodes (npm keyword n8n-community-node-package)
+    spec_file: null
+    role: ipaas-connector:n8n-community
+    registered_name: '@chroniclehq/n8n-nodes-chronicle'
+    matched_domain: chroniclehq.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    package: '@chroniclehq/n8n-nodes-chronicle'
+    version: 0.1.2
+    published: '2026-05-18T13:45:42.856Z'
+    matched_on: publisher-email
+    builder: provider (package published from the provider's own domain)
+  detected_by: sweep-workflow-automation.py
+  first_seen: '2026-10-15'
+method: searched
+checked:
+- https://registry.npmjs.org/-/v1/search?text=keywords:n8n-community-node-package
+source:
+- https://registry.npmjs.org/-/v1/search?text=keywords:n8n-community-node-package
