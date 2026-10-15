@@ -28,5 +28,5 @@
     published: '2026-05-18T13:45:42.856Z'
     matched_on: publisher-email
     builder: provider (package published from the provider's own domain)
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
