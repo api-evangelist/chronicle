@@ -64,6 +64,117 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Chronicle is a company surfaced as a portfolio company of accel and added to the API Evangelist network as a stub for enrichment. Sector: cloud-saas. This profile is a lead awaiting the enrichment pipeline.
+Chronicle is an AI presentation platform (chroniclehq.com) that turns documents, notes, data, and business context into beautiful, fully editable, on-brand presentations, using templates from designers at Apple, McKinsey, BCG, and IDEO. Beyond the web app, Chronicle ships a developer surface: a workspace-scoped REST API at api.chroniclehq.com/api/v1 for listing templates, creating and generating presentations, uploading reference files, and polling asynchronous generation jobs; and a hosted, OAuth-secured MCP server at mcp.chroniclehq.com that lets AI agents (Claude, ChatGPT, Gemini) create presentations directly. Chronicle is used by teams including OpenAI, Ramp, Vercel, Notion, Figma, and Meta, and is backed by Accel.
 
-Backed by: accel — https://chroniclehq.com/
+**Areas:** Company · Cloud Saas · Presentations · Artificial Intelligence · Productivity · Content Generation · Agents · MCP · Developer API
+
+## Chronicle on APIs.io
+
+Everything profiled for Chronicle is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/chronicle/](https://apis.io/providers/chronicle/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Chronicle API](https://apis.io/apis/chronicle/chronicle-api/) — Workspace-scoped REST API to list templates, create presentations from templates, generate presentations from a prompt (asynchronous, poll-to-complete),…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [chronicle](https://apis.io/servers/chronicle/chronicle/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Chronicle Authentication](https://apis.io/security/chronicle/chronicle-authentication/)
+- [Chronicle Domain Security](https://apis.io/security/chronicle/chronicle-domain-security/)
+- [Chronicle Trust Center](https://apis.io/security/chronicle/chronicle-trust-center/)
+- [Chronicle Vulnerability Disclosure](https://apis.io/security/chronicle/chronicle-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Chronicle Plans Pricing](https://apis.io/plans/chronicle/chronicle-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Chronicle Rate Limits](https://apis.io/rate-limits/chronicle/chronicle-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://chroniclehq.com/)
+- [Documentation](https://docs.chroniclehq.com/overview)
+- [Getting started](https://docs.chroniclehq.com/quickstart)
+- [API reference](https://docs.chroniclehq.com/api-reference)
+- [Pricing](https://chroniclehq.com/pricing)
+- [Sign up](https://app.chroniclehq.com/start)
+- [Support](https://intercom.help/chroniclehqfaq/en/)
+- [Blog](https://chroniclehq.com/blog)
+- [Compliance](https://security.chroniclehq.com/)
+- [Terms of service](https://chroniclehq.com/terms-of-use)
+- [Privacy policy](https://chroniclehq.com/privacy-policy-2)
+- [GitHub](https://github.com/chroniclehq)
+
+## API Evangelist rating
+
+**Kin Score 47.7** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 50.0 |
+| Developer ergonomics | 58.9 |
+| Access clarity | 85.5 |
+
+**Agent readiness 29.3** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 32.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/chronicle/](https://apis.io/providers/chronicle/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Chronicle: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/chronicle/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
